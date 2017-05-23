@@ -1,6 +1,7 @@
 ﻿namespace StackAndQueue
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
@@ -20,7 +21,26 @@
             //BalancedParentheses
             //RecursiveFibonacci DONT 
 
+            int numberOfOperations = int.Parse(Console.ReadLine());
+            Stack<string> comands=new Stack<string>();
+            for (int i = 0; i < numberOfOperations; i++)
+            {
+                string input = Console.ReadLine();
+                comands.Push(input);
+                string[] comandLine = input.Split();
+                int comand = int.Parse(comandLine[0]);
 
+            }
+
+
+
+
+
+        }
+
+        public static void SimpleTextEditor()
+        {
+            
         }
 
         private static long recursiveFibonacciWithMemoization(int n)
@@ -41,9 +61,6 @@
                 recursiveFibonacciWithMemoization(n - 2);
             return memo[n];
         }
-
-
-
 
         public static void RecursiveFibonacci()
         {
