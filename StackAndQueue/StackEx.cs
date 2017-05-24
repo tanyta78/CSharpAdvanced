@@ -20,27 +20,155 @@
             //TruckTour();
             //BalancedParentheses
             //RecursiveFibonacci DONT 
+            //SimpleTextEditor
+            int numberOfPlants = int.Parse(Console.ReadLine());
+            var plantsInfo = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-            int numberOfOperations = int.Parse(Console.ReadLine());
-            Stack<string> comands=new Stack<string>();
-            for (int i = 0; i < numberOfOperations; i++)
+            var plants = new Stack<Plant>();
+
+            var maxDaysAlive = 0;
+
+            foreach (var pesticideOfPlant in plantsInfo)
             {
-                string input = Console.ReadLine();
-                comands.Push(input);
-                string[] comandLine = input.Split();
-                int comand = int.Parse(comandLine[0]);
+                var daysAlive = 0;
+                while (plants.Count > 0 && pesticideOfPlant <= plants.Peek().Poison)
+                {
+                    daysAlive = Math.Max(daysAlive, plants.Pop().DaysAlive);
+                }
 
+                daysAlive = plants.Count == 0 ? 0 : daysAlive + 1;
+                maxDaysAlive = Math.Max(maxDaysAlive, daysAlive);
+
+                var plant = new Plant(pesticideOfPlant, daysAlive);
+                plants.Push(plant);
             }
 
-
-
-
+            Console.WriteLine(maxDaysAlive);
 
         }
 
+        public static void PoisonousPlantsWithoutStack()
+        {
+           
+                        int n = int.Parse(Console.ReadLine());
+                        int[] plants = Console.ReadLine().Split().Select(int.Parse).ToArray();
+                        int[] days = new int[n];
+                        int[] minElement = new int[n];
+
+                        int min = int.MaxValue;
+                        for (int i = 0; i < n; i++)
+                        {
+                            if (plants[i] < min)
+                            {
+                                min = plants[i];
+                            }
+                            minElement[i] = min;
+                        }
+
+                        int max = 0;
+                        int maxIndex = 0;
+
+                        for (int i = 1; i < n; i++)
+                        {
+                            if (plants[i] > plants[i - 1])
+                            {
+                                days[i] = 1;
+                                if (days[i] >= max)
+                                {
+                                    maxIndex = i;
+                                    max = days[i];
+                                }
+                                continue;
+                            }
+
+                            if (plants[i] > minElement[i])
+                            {
+                                if (plants[i] > plants[maxIndex])
+                                {
+                                    days[i] = days[i - 1] + 1;
+                                }
+                                else
+                                {
+                                    days[i] = days[maxIndex] + 1;
+                                }
+                            }
+                            if (plants[i] == minElement[i])
+                            {
+                                max = 0;
+                            }
+
+                            if (days[i] >= max)
+                            {
+                                maxIndex = i;
+                                max = days[i];
+                            }
+                        }
+
+                        Console.WriteLine(days.Max());
+                    }
+                
+
         public static void SimpleTextEditor()
         {
-            
+            int numberOfOperations = int.Parse(Console.ReadLine());
+            Stack<string> result = new Stack<string>();
+            for (int i = 0; i < numberOfOperations; i++)
+            {
+
+                string[] commandLine = Console.ReadLine().Split();
+                string command = commandLine[0];
+
+                switch (command)
+                {
+                    case "1":
+                        var editedText = result.Count > 0
+                            ? new StringBuilder(result.Peek())
+                            : new StringBuilder();
+                        editedText.Append(commandLine[1]);
+                        result.Push(editedText.ToString());
+                        break;
+                    case "2":
+                        var currentText = result.Peek();
+                        var newText = new StringBuilder(currentText);
+                        int startIndex = currentText.Length - int.Parse(commandLine[1]);
+                        newText.Remove(startIndex, currentText.Length - startIndex);
+                        result.Push(newText.ToString());
+                        break;
+                    case "3":
+                        var curentText = result.Peek();
+
+                        int currentIndex = int.Parse(commandLine[1]) - 1;
+                        Console.WriteLine(curentText[currentIndex]);
+                        break;
+                    case "4":
+                        result.Pop();
+                        break;
+                    default:
+                        throw new InvalidOperationException();
+                }
+
+            }
+        }
+
+        public static void StackFibonacci()
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            var fibNumbers = new Stack<ulong>();
+            fibNumbers.Push(1);
+            fibNumbers.Push(1);
+
+            for (int i = 1; i < n; i++)
+            {
+                ulong first = fibNumbers.Pop();
+                ulong second = fibNumbers.Pop();
+
+                fibNumbers.Push(first);
+                fibNumbers.Push(first + second);
+            }
+
+            fibNumbers.Pop();
+            Console.WriteLine(fibNumbers.Peek());
         }
 
         private static long recursiveFibonacciWithMemoization(int n)
@@ -66,7 +194,7 @@
         {
             int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(recursiveFibonacciWithMemoization(n));
+            Console.WriteLine(recursiveFibonacciWithMemoization(n-1));
         }
 
         public static void BalancedParentheses()
@@ -360,6 +488,21 @@
             }
 
         }
+    }
+
+    public class Plant
+    {
+        public int Poison { get; }
+        public int DaysAlive { get; }
+
+        public Plant(int poison, int daysalive)
+        {
+            this.Poison = poison;
+            this.DaysAlive = daysalive;
+        }
+
+
+
     }
 
     public class GasPump
