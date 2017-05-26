@@ -11,7 +11,35 @@
     {
         static void Main()
         {
-           
+            int numberOfStudents = int.Parse(Console.ReadLine());
+            var studentsInfo= new SortedDictionary<string,List<double>>();
+
+            for (int i = 0; i < numberOfStudents; i++)
+            {
+                string name = Console.ReadLine();
+                var scores = Console.ReadLine().Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse).ToList();
+                if (!studentsInfo.ContainsKey(name))
+                {
+                    studentsInfo.Add(name, scores);
+                }
+                else
+                {
+                    var previousList = studentsInfo[name];
+                    foreach (var score in scores)
+                    {
+                        previousList.Add(score);
+                    }
+                    studentsInfo[name] = scores;
+                }
+            }
+
+            if (studentsInfo.Count != 0)
+            {
+                foreach (var pair in studentsInfo)
+                {
+                   Console.WriteLine($"{pair.Key} is graduated with {pair.Value.Average()}");
+                }
+            }
             
         }
         public static void CountValuesAppear()
