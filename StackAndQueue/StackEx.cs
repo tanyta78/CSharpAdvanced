@@ -1,4 +1,4 @@
-﻿namespace StackAndQueue
+﻿namespace StackAndQueueEx
 {
     using System;
     using System.Collections;

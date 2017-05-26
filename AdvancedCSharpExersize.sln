@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackAndQueue", "StackAndQueue\StackAndQueue.csproj", "{616AC70E-5579-485E-B967-62EFA9F0BF75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackAndQueueEx", "StackAndQueue\StackAndQueueEx.csproj", "{616AC70E-5579-485E-B967-62EFA9F0BF75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetAndDictionaries", "SetAndDictionaries\SetAndDictionaries.csproj", "{5B514EF5-4A3F-4649-ADAD-79DB9943555F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringEx", "StringEx\StringEx.csproj", "{AF046AF8-474F-4D52-9885-B7399DA817A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackAndQueueLab", "StackAndQueueLab\StackAndQueueLab.csproj", "{0C9E044E-9CB1-49E3-B3C3-FE59D8950577}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetAndDictionaryLab", "SetAndDictionaryLab\SetAndDictionaryLab.csproj", "{B096C823-EF0C-4C2A-A8CA-3854110757C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchPerformance", "WatchPerformance\WatchPerformance.csproj", "{5DA34374-C973-4B73-87E8-939EF7046720}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{0C9E044E-9CB1-49E3-B3C3-FE59D8950577}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C9E044E-9CB1-49E3-B3C3-FE59D8950577}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C9E044E-9CB1-49E3-B3C3-FE59D8950577}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B096C823-EF0C-4C2A-A8CA-3854110757C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B096C823-EF0C-4C2A-A8CA-3854110757C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B096C823-EF0C-4C2A-A8CA-3854110757C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B096C823-EF0C-4C2A-A8CA-3854110757C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA34374-C973-4B73-87E8-939EF7046720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA34374-C973-4B73-87E8-939EF7046720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA34374-C973-4B73-87E8-939EF7046720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA34374-C973-4B73-87E8-939EF7046720}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
