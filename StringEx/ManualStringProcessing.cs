@@ -1,4 +1,5 @@
-﻿namespace StringEx
+﻿
+namespace StringEx
 {
     using System;
     using System.Linq;
@@ -6,17 +7,47 @@
     using System.Text;
     using System.Collections;
     using System.Collections.Generic;
+    using System.Text.RegularExpressions;
 
     public class ManualStringProcessing
     {
-       public static void Main()
-       {
-          
+        public static void Main()
+        {
+
+            var result = new List<string>();
+            var input = Console.ReadLine();
+
+            StringBuilder textbuild = new StringBuilder();
+            while (input != "END")
+            {
+                textbuild.Append(input);
+                textbuild.Append("\n");
+
+                input = Console.ReadLine();
+            }
+            input = textbuild.ToString();
+
+            String pattern = @"(?:<a)(?:[\s\n_0-9a-zA-Z=""()]*?.*?)(?:href([\s\n]*)?=(?:['""\s\n]*)?)([a-zA-Z:#\/._\-0-9!?=^+]*(\([""'a-zA-Z\s.()0-9]*\))?)(?:[\s\na-zA-Z=""()0-9]*.*?)?(?:\>)";
+            Regex rex = new Regex(pattern);
+            Match match = rex.Match(input);
+
+            while (match.Success)
+            {
+                result.Add(match.Groups[2].Value);
+
+                match = match.NextMatch();
+            }
+
+            foreach (var i in result)
+            {
+                Console.WriteLine(i);
+            }
+
         }
 
         public static void ExtractHyperlinks()
         {
-            
+
         }
 
         public static void MelrahShake()
@@ -26,7 +57,7 @@
 
             while (true)
             {
-                
+
                 //find match
                 int lastindex = test.LastIndexOf(key);
                 int firstindex = test.IndexOf(key);
@@ -37,7 +68,7 @@
                 {
                     Console.WriteLine("Shaked it.");
                     test = test.Remove(firstindex, key.Length);
-                   lastindex = test.LastIndexOf(key);
+                    lastindex = test.LastIndexOf(key);
                     test = test.Remove(lastindex, key.Length);
                 }
                 else
@@ -158,7 +189,7 @@
             {
                 result += ch;
             }
-           
+
             return result;
         }
 
@@ -200,15 +231,15 @@
 
         private static bool IsPalindrome(string word)
         {
-           
-            for (int i = 0; i < word.Length/2; i++)
+
+            for (int i = 0; i < word.Length / 2; i++)
             {
-                if (!word[i].Equals(word[word.Length-i-1]))
+                if (!word[i].Equals(word[word.Length - i - 1]))
                 {
                     return false;
                 }
             }
-            
+
             return true;
         }
 
@@ -386,7 +417,7 @@
             {
                 result[result.Length - i - 1] = input[i];
             }
-                
+
             input = new string(result);
 
             Console.WriteLine(input);
