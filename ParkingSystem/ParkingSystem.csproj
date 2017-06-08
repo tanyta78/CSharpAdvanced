@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{152B78ED-A1DE-43CB-9F9B-CC717E9E2D85}</ProjectGuid>
+    <ProjectGuid>{2ADE3A40-2D90-4B49-B61D-0CE7CA1D736C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RegexEx</RootNamespace>
-    <AssemblyName>RegexEx</AssemblyName>
+    <RootNamespace>ParkingSystem</RootNamespace>
+    <AssemblyName>ParkingSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RegEx.cs" />
+    <Compile Include="ParkSys100.cs" />
+    <Compile Include="ParkSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
