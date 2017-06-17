@@ -8,31 +8,170 @@ namespace FuncProgEx
     {
         public static void Main()
         {
+            
+           
+        }
+
+        public static void TriFunction()
+        {
+            int wantedSum = int.Parse(Console.ReadLine());
+            var words = Console.ReadLine().Split();
+            Func<string, int> wordToSum = word => word.ToCharArray().Select(w => (int)w).Sum();
+
+            foreach (var word in words)
+            {
+
+                Predicate<string> sumsToCheck = w => wordToSum(w) >= wantedSum;
+                if (sumsToCheck(word))
+                {
+                    Console.WriteLine(word);
+                    break;
+                }
+            }
+        }
+
+        public static void PartyReservationFilterModule()
+        {
+            var people = Console.ReadLine().Split().ToList();
+
+            var input = Console.ReadLine();
+
+            var criteriaString = new List<string>();
+            while (!input.Equals("Print"))
+            {
+                var commands = input.Split(';').ToList();
+                var mainCommand = commands[0];
+                var criteria = commands[1];
+                var filterString = commands[2];
+
+                switch (mainCommand)
+                {
+                    case "Add filter":
+                        criteriaString.Add($"{criteria}\\{filterString}");
+                        break;
+
+                    case "Remove filter":
+                        criteriaString.Remove($"{criteria}\\{filterString}");
+                        break;
+                }
+
+                input = Console.ReadLine();
+            }
+
+            foreach (var item in criteriaString)
+            {
+                var comands = item.Split('\\').ToList();
+                Predicate<string> filter = ReservationFilterPeople(comands[0], comands[1]);
+                people.RemoveAll(filter);
+            }
+
+            Console.WriteLine(people.Count == 0 ? "" : string.Join(" ", people));
+        }
+
+        public static Predicate<string> ReservationFilterPeople(string criteria, string filterString)
+        {
+            switch (criteria)
+            {
+                case "Starts with":
+                    return n => n.StartsWith(filterString);
+
+                case "Ends with":
+                    return n => n.EndsWith(filterString);
+
+                case "Length":
+                    return n => n.Length == int.Parse(filterString);
+
+                case "Contains":
+                    return n => n.Contains(filterString);
+            }
+            return null;
+        }
+
+        public static void PredicateParty()
+        {
             var people = Console.ReadLine().Split().ToList();
 
             var input = Console.ReadLine();
 
             while (!input.Equals("Party!"))
             {
-                
+                var commands = input.Split().ToList();
+                var mainCommand = commands[0];
+                var criteria = commands[1];
+                var filterString = commands[2];
+
+                Predicate<string> filter = FilterPeople(criteria, filterString);
+                people = DoCommandWithPeopleToFilter(people, filter, mainCommand);
+
+                input = Console.ReadLine();
             }
 
-
+            if (people.Count == 0)
+            {
+                Console.WriteLine("Nobody is going to the party!");
+            }
+            else
+            {
+                Console.Write(string.Join(", ", people));
+                Console.WriteLine(" are going to the party!");
+            }
         }
+
+        private static List<string> DoCommandWithPeopleToFilter(List<string> people, Predicate<string> filter, string mainCommand)
+        {
+            var result = new List<string>();
+
+            switch (mainCommand)
+            {
+                case "Remove":
+
+                    people.RemoveAll(filter);
+                    return people;
+
+                case "Double":
+                    result = people.FindAll(filter);
+                    foreach (var name in result)
+                    {
+                        people.Insert(people.IndexOf(name), name);
+                    }
+                    return people;
+
+                default:
+                    return null;
+            }
+        }
+
+        public static Predicate<string> FilterPeople(string criteria, string filterString)
+        {
+            switch (criteria)
+            {
+                case "StartsWith":
+                    return n => n.StartsWith(filterString);
+
+                case "EndsWith":
+                    return n => n.EndsWith(filterString);
+
+                case "Length":
+                    return n => n.Length == int.Parse(filterString);
+            }
+            return null;
+        }
+
+        public static object FilterNamesStartsWith { get; set; }
 
         public static void RealCustomComparator()
         {
             int[] numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            Array.Sort(numbers,new MyCompare());
+            Array.Sort(numbers, new MyCompare());
             //Array.Sort(numbers,Comparison);
-            Console.WriteLine(string.Join(" ",numbers));
+            Console.WriteLine(string.Join(" ", numbers));
         }
 
         private static int Comparison(int a, int b)
         {
             var first = Math.Abs(a) % 2;
             var second = Math.Abs(b) % 2;
-            if (first!=second)
+            if (first != second)
             {
                 return first.CompareTo(second);
             }
@@ -42,7 +181,6 @@ namespace FuncProgEx
 
         public static void ListOfPredicates()
         {
-
             int range = int.Parse(Console.ReadLine());
             int[] dividers = Console.ReadLine().Split(' ').Select(int.Parse).Distinct().ToArray();
 
@@ -66,10 +204,12 @@ namespace FuncProgEx
                     Console.Write("{0} ", j);
                 }
             }
-
         }
 
-        private static long gcdEuclidRemainder(long a, long b) { return b == 0 ? a : gcdEuclidRemainder(b, a % b); }
+        private static long gcdEuclidRemainder(long a, long b)
+        {
+            return b == 0 ? a : gcdEuclidRemainder(b, a % b);
+        }
 
         public static void CustomComparator()
         {
@@ -241,7 +381,7 @@ namespace FuncProgEx
     {
         public int Compare(int x, int y)
         {
-            if ((x%2==0)&&(y%2!=0))
+            if ((x % 2 == 0) && (y % 2 != 0))
             {
                 return -1;
             }
@@ -254,7 +394,8 @@ namespace FuncProgEx
                 if (x > y)
                 {
                     return 1;
-                }else if (x < y)
+                }
+                else if (x < y)
                 {
                     return -1;
                 }
@@ -265,6 +406,4 @@ namespace FuncProgEx
             }
         }
     }
-
-    
 }
