@@ -7,8 +7,7 @@ namespace Crossfire
     {
         public static void Main()
         {
-
-            int[] dimensions = Console.ReadLine().Split(new[] {' ', '\t'}, StringSplitOptions.RemoveEmptyEntries)
+            int[] dimensions = Console.ReadLine().Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse).ToArray();
             int rows = dimensions[0];
             int cols = dimensions[1];

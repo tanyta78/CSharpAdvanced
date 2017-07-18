@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RubikMatrix
 {
-   public class RubikMatrix
+    public class RubikMatrix
     {
         public static void Main()
         {
-            int[] matrixInfo = Console.ReadLine().Split(new[] {' ', '\t'}, StringSplitOptions.RemoveEmptyEntries)
+            int[] matrixInfo = Console.ReadLine().Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse).ToArray();
             int rowsNum = matrixInfo[0];
             int colsNum = matrixInfo[1];
@@ -26,10 +25,10 @@ namespace RubikMatrix
                     count++;
                 }
             }
-            
+
             for (int i = 0; i < numberOfCommands; i++)
             {
-                string[] comands = Console.ReadLine().Split(new[] {' ', '\t'}, StringSplitOptions.RemoveEmptyEntries)
+                string[] comands = Console.ReadLine().Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
                 string mainComand = comands[1];
 
@@ -38,18 +37,19 @@ namespace RubikMatrix
                     case "down":
                         MoveMatrixColDown(comands, rubikMatrix);
                         break;
+
                     case "up":
                         MoveMatrixColUp(comands, rubikMatrix);
                         break;
+
                     case "left":
                         MoveMatrixRowLeft(comands, rubikMatrix);
                         break;
+
                     case "right":
                         MoveMatrixRowRight(comands, rubikMatrix);
                         break;
-
                 }
-
             }
 
             //swaps
@@ -116,10 +116,8 @@ namespace RubikMatrix
                 colList.Enqueue(rubikMatrix[rubikMatrix.GetLength(0) - 1 - rowIndex, startCol]);
             }
 
-
             for (int index = 0; index < loops; index++)
             {
-
                 colList.Enqueue(colList.Dequeue());
             }
 
@@ -127,7 +125,6 @@ namespace RubikMatrix
             {
                 rubikMatrix[rubikMatrix.GetLength(0) - 1 - rowIndex, startCol] = colList.Dequeue();
             }
-
         }
 
         private static void MoveMatrixColUp(string[] comands, int[,] rubikMatrix)
@@ -144,10 +141,8 @@ namespace RubikMatrix
                 colList.Enqueue(rubikMatrix[rowIndex, startCol]);
             }
 
-
             for (int index = 0; index < loops; index++)
             {
-
                 colList.Enqueue(colList.Dequeue());
             }
 
@@ -155,11 +150,6 @@ namespace RubikMatrix
             {
                 rubikMatrix[rowIndex, startCol] = colList.Dequeue();
             }
-
-
-
-
-
         }
 
         private static void MoveMatrixRowLeft(string[] comands, int[,] rubikMatrix)
@@ -175,10 +165,8 @@ namespace RubikMatrix
                 rowList.Enqueue(rubikMatrix[startRow, colIndex]);
             }
 
-
             for (int index = 0; index < loops; index++)
             {
-
                 rowList.Enqueue(rowList.Dequeue());
             }
 
@@ -201,10 +189,8 @@ namespace RubikMatrix
                 rowList.Enqueue(rubikMatrix[startRow, rubikMatrix.GetLength(1) - 1 - colIndex]);
             }
 
-
             for (int index = 0; index < loops; index++)
             {
-
                 rowList.Enqueue(rowList.Dequeue());
             }
 
@@ -215,4 +201,3 @@ namespace RubikMatrix
         }
     }
 }
-

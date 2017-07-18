@@ -10,10 +10,8 @@
         public static void Main()
         {
             // var input = Console.ReadLine().Trim(); // "Rotate(degrees)"
-           // var degrees = int.Parse(input.Substring("Rotate(".Length, input.Length - 1 - "Rotate(".Length));
-           // degrees %= 360;
-
-
+            // var degrees = int.Parse(input.Substring("Rotate(".Length, input.Length - 1 - "Rotate(".Length));
+            // degrees %= 360;
 
             string degreesString = Console.ReadLine().Trim().ToLower();
 

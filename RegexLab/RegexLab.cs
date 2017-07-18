@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using System.Xml;
 
 namespace RegexLab
 {
@@ -8,7 +7,6 @@ namespace RegexLab
     {
         public static void Main()
         {
-
             string pattern = "(\"|')(.*?)\\1";
 
             Regex newRegex = new Regex(pattern);
@@ -18,14 +16,12 @@ namespace RegexLab
 
             foreach (Match match in matches)
             {
-               Console.WriteLine(match.Groups[2].Value);
+                Console.WriteLine(match.Groups[2].Value);
             }
-
         }
 
         public static void ExtractQuatiations()
         {
-            
         }
 
         public static void ValidTime()
@@ -45,7 +41,6 @@ namespace RegexLab
 
         public static void ValidNames()
         {
-
             string pattern = @"^[\w\d-]{3,16}$";
 
             Regex newRegex = new Regex(pattern);

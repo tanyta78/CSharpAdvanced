@@ -1,19 +1,17 @@
-﻿
-namespace StringEx
+﻿namespace StringEx
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Numerics;
     using System.Text;
-    using System.Collections;
-    using System.Collections.Generic;
     using System.Text.RegularExpressions;
 
     public class ManualStringProcessing
     {
         private static List<String> _result;
 
-        static void Main()
+        private static void Main()
         {
             _result = new List<String>();
             String input = GetInput();
@@ -64,8 +62,6 @@ namespace StringEx
 
             return bld.ToString();
         }
-    
-
 
         public static void ExtractHyperlinks()
         {
@@ -106,7 +102,6 @@ namespace StringEx
 
             while (true)
             {
-
                 //find match
                 int lastindex = test.LastIndexOf(key);
                 int firstindex = test.IndexOf(key);
@@ -129,7 +124,6 @@ namespace StringEx
                 //change key
                 int indexToremove = key.Length / 2;
                 key = key.Remove(indexToremove, 1);
-
             }
         }
 
@@ -191,7 +185,6 @@ namespace StringEx
                         isExchangable = false;
                         break;
                     }
-
                 }
                 else
                 {
@@ -216,11 +209,9 @@ namespace StringEx
                         isExchangable = false;
                     }
                 }
-
             }
 
             Console.WriteLine(isExchangable.ToString().ToLower());
-
         }
 
         private static decimal CharMultiply(string smallerWord, string biggerWord)
@@ -280,7 +271,6 @@ namespace StringEx
 
         private static bool IsPalindrome(string word)
         {
-
             for (int i = 0; i < word.Length / 2; i++)
             {
                 if (!word[i].Equals(word[word.Length - i - 1]))
@@ -346,7 +336,6 @@ namespace StringEx
                 {
                     result.Append(numberInMind);
                 }
-
             }
 
             char[] resultToCharArr = result.ToString().ToCharArray();
@@ -404,7 +393,6 @@ namespace StringEx
                 }
             }
             Console.WriteLine(countSubstrings);
-
         }
 
         public static void ConvertFromNTo10Base()

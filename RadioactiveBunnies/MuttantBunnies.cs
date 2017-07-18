@@ -67,10 +67,7 @@
             else
             {
                 Console.WriteLine($"dead: {playerRow} {playerCol} ");
-
             }
-
-
         }
 
         private static void MoveBunnies(int rows, int cols, ref char[][] lairMatrix, ref bool isDead)
@@ -83,10 +80,7 @@
                 {
                     tempMatrix[rIndex][cIndex] = lairMatrix[rIndex][cIndex];
                 }
-
-
             }
-
 
             for (int rowIndex = 0; rowIndex < rows; rowIndex++)
             {
@@ -99,7 +93,6 @@
                             if (lairMatrix[rowIndex - 1][colIndex] == 'P')
                             {
                                 isDead = true;
-
                             }
                             tempMatrix[rowIndex - 1][colIndex] = 'B';
                         }
@@ -108,7 +101,6 @@
                             if (lairMatrix[rowIndex + 1][colIndex] == 'P')
                             {
                                 isDead = true;
-
                             }
                             tempMatrix[rowIndex + 1][colIndex] = 'B';
                         }
@@ -129,7 +121,6 @@
                             tempMatrix[rowIndex][colIndex + 1] = 'B';
                         }
                     }
-
                 }
             }
 
@@ -160,6 +151,7 @@
                         playerRow--;
                     }
                     break;
+
                 case 'D':
                     if (playerRow == rows - 1)
                     {
@@ -174,13 +166,13 @@
                         }
                         else
                         {
-
                             lairMatrix[playerRow + 1][playerCol] = 'P';
                             lairMatrix[playerRow][playerCol] = '.';
                         }
                         playerRow++;
                     }
                     break;
+
                 case 'L':
                     if (playerCol == 0)
                     {
@@ -197,11 +189,11 @@
                         {
                             lairMatrix[playerRow][playerCol - 1] = 'P';
                             lairMatrix[playerRow][playerCol] = '.';
-
                         }
                         playerCol--;
                     }
                     break;
+
                 case 'R':
                     if (playerCol == cols - 1)
                     {
@@ -218,12 +210,10 @@
                         {
                             lairMatrix[playerRow][playerCol + 1] = 'P';
                             lairMatrix[playerRow][playerCol] = '.';
-
                         }
                         playerCol++;
                     }
                     break;
-
             }
         }
     }

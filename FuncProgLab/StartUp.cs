@@ -21,15 +21,15 @@ namespace FuncProgLab
             var age = int.Parse(Console.ReadLine());
             var format = Console.ReadLine();
 
-            Func<int,bool> tester = CreateTester(condition, age);
+            Func<int, bool> tester = CreateTester(condition, age);
             Action<KeyValuePair<string, int>> printer = CreatePrinter(format);
 
             InvokePrinter(people, tester, printer);
         }
 
         private static void InvokePrinter(
-            Dictionary<string, int> people, 
-            Func<int, bool> tester, 
+            Dictionary<string, int> people,
+            Func<int, bool> tester,
             Action<KeyValuePair<string, int>> printer)
         {
             foreach (var person in people)
@@ -50,9 +50,9 @@ namespace FuncProgLab
 
                 case "older":
                     return p => p > age;
+
                 default: return null;
             }
-            
         }
 
         private static Action<KeyValuePair<string, int>> CreatePrinter(string format)

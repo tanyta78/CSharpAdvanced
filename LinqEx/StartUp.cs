@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml;
 
 namespace LinqEx
 {
-    class StartUp
+    internal class StartUp
     {
         public class Student
         {
@@ -33,7 +28,7 @@ namespace LinqEx
             while (!input.Equals("END"))
             {
                 var studentInfo = input.Split();
-                var firstName = studentInfo[0]+" "+studentInfo[1];
+                var firstName = studentInfo[0] + " " + studentInfo[1];
 
                 var group = int.Parse(studentInfo[2]);
 
@@ -49,7 +44,6 @@ namespace LinqEx
             {
                 Console.WriteLine($"{group.Key} - {string.Join(", ", group)}");
             }
-
         }
 
         public static void StudentsGroupByGroup()
@@ -76,9 +70,7 @@ namespace LinqEx
             {
                 Console.WriteLine($"{group.Key} - {string.Join(", ", group)}");
             }
-
         }
-
 
         public class StudentG
         {
@@ -93,7 +85,6 @@ namespace LinqEx
                 this.Grades = grades;
             }
         }
-
 
         public static void StudentsByYear()
         {
@@ -116,7 +107,6 @@ namespace LinqEx
 
                 input = Console.ReadLine();
             }
-
 
             students.Where(s => s.FirstName.EndsWith("14") || s.FirstName.EndsWith("15")).ToList().ForEach(s => Console.WriteLine(string.Join(" ", s.Grades)));
         }
@@ -143,7 +133,6 @@ namespace LinqEx
                 input = Console.ReadLine();
             }
 
-
             students.Where(s => s.Grades.FindAll(g => g <= 3).Count >= 2).ToList().ForEach(s => Console.WriteLine($"{s.FirstName} {s.LastName}"));
         }
 
@@ -168,7 +157,6 @@ namespace LinqEx
 
                 input = Console.ReadLine();
             }
-
 
             students.Where(s => s.Grades.Contains(6)).ToList().ForEach(s => Console.WriteLine($"{s.FirstName} {s.LastName}"));
         }
@@ -205,7 +193,6 @@ namespace LinqEx
                 input = Console.ReadLine();
             }
 
-
             students.Where(s => s.Email.StartsWith("02") || s.Email.StartsWith("+3592")).ToList().ForEach(s => Console.WriteLine($"{s.FirstName} {s.LastName}"));
         }
 
@@ -227,10 +214,8 @@ namespace LinqEx
                 input = Console.ReadLine();
             }
 
-
             students.Where(s => s.Email.EndsWith("@gmail.com")).ToList().ForEach(s => Console.WriteLine($"{s.FirstName} {s.LastName}"));
         }
-
 
         public static void SortStudents()
         {
@@ -249,7 +234,6 @@ namespace LinqEx
 
                 input = Console.ReadLine();
             }
-
 
             students.OrderBy(s => s.LastName).ThenByDescending(s => s.FirstName).ToList().ForEach(s => Console.WriteLine($"{s.FirstName} {s.LastName}"));
         }
@@ -325,6 +309,4 @@ namespace LinqEx
             result.ForEach(s => Console.WriteLine($"{s.FirstName} {s.LastName}"));
         }
     }
-
-   
 }

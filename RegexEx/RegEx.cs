@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace RegexEx
 {
     public class RegEx
     {
-        static void Main()
+        private static void Main()
         {
+            FullName();
+        }
 
-
+        public static void SemanticHtml()
+        {
             Regex openingTagRegex = new Regex(@"<div(.*?\b)((id|class)\s*=\s*""(.*?)"")(.*?)>");
             Regex closingTagRegex = new Regex(@"<\/div>\s*<!--\s*(.*?)\s*-->");
             string text = Console.ReadLine();
-
 
             while (text != null && !text.Equals("END"))
             {
@@ -24,13 +23,12 @@ namespace RegexEx
                 var closingTagMatch = closingTagRegex.Match(text);
                 if (openingTagMatch.Success)
                 {
-
                     text = $"{openingTagMatch.Groups[4].Value} {openingTagMatch.Groups[1].Value} ";
                     StringBuilder sb = new StringBuilder();
                     sb.Append(text);
                     for (int i = 5; i <= openingTagMatch.Groups.Count; i++)
                     {
-                        var currentInfo = openingTagMatch.Groups[i].Value+" ";
+                        var currentInfo = openingTagMatch.Groups[i].Value + " ";
                         sb.Append(currentInfo);
                     }
                     text = sb.ToString().Trim();
@@ -45,12 +43,6 @@ namespace RegexEx
                 Console.WriteLine(text);
                 text = Console.ReadLine();
             }
-
-        }
-
-        public static void SemanticHtml()
-        {
-
         }
 
         public static void ExtractHiperlinks()
@@ -76,7 +68,6 @@ namespace RegexEx
                 {
                     Console.WriteLine(match.Groups[2].Value);
                 }
-
             }
         }
 
@@ -131,7 +122,6 @@ namespace RegexEx
                     {
                         Console.WriteLine(match.Value);
                     }
-
                 }
             }
         }
@@ -143,7 +133,6 @@ namespace RegexEx
             Regex newRegex = new Regex(pattern);
 
             string text = Console.ReadLine();
-
 
             if (newRegex.IsMatch(text))
             {
@@ -206,7 +195,6 @@ namespace RegexEx
                 }
                 text = Console.ReadLine();
             }
-
         }
 
         public static void FullName()
@@ -225,7 +213,6 @@ namespace RegexEx
                 }
                 text = Console.ReadLine();
             }
-
         }
     }
 }

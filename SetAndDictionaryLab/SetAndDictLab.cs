@@ -3,21 +3,19 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Text.RegularExpressions;
 
-    class SetAndDictLab
+    internal class SetAndDictLab
     {
-        static void Main()
+        private static void Main()
         {
             int numberOfStudents = int.Parse(Console.ReadLine());
-            var studentsInfo= new SortedDictionary<string,List<double>>();
+            var studentsInfo = new SortedDictionary<string, List<double>>();
 
             for (int i = 0; i < numberOfStudents; i++)
             {
                 string name = Console.ReadLine();
-                var scores = Console.ReadLine().Split(new []{' '}, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse).ToList();
+                var scores = Console.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse).ToList();
                 if (!studentsInfo.ContainsKey(name))
                 {
                     studentsInfo.Add(name, scores);
@@ -37,11 +35,11 @@
             {
                 foreach (var pair in studentsInfo)
                 {
-                   Console.WriteLine($"{pair.Key} is graduated with {pair.Value.Average()}");
+                    Console.WriteLine($"{pair.Key} is graduated with {pair.Value.Average()}");
                 }
             }
-            
         }
+
         public static void CountValuesAppear()
         {
             var valuesCount = new SortedDictionary<double, long>();
@@ -59,7 +57,6 @@
                     else
                     {
                         valuesCount[number] += 1;
-
                     }
                 }
             }
@@ -86,7 +83,6 @@
             int allguestsnumber = allguests.Count;
 
             input = Console.ReadLine();
-
 
             while (!input.Equals("END"))
             {
@@ -134,7 +130,6 @@
                 }
 
                 commandLine = Console.ReadLine();
-
             }
 
             if (parcingLot.Count != 0)

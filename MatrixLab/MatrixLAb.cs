@@ -1,15 +1,13 @@
 ﻿namespace MatrixLab
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class MatrixLAb
     {
         public static void Main()
         {
-            
-
         }
 
         public static void PascalTriangle()
@@ -30,15 +28,11 @@
                     pascalTriangle[rowIndex][coIndex] =
                         pascalTriangle[rowIndex - 1][coIndex - 1] + pascalTriangle[rowIndex - 1][coIndex];
                 }
-
-
-
             }
             foreach (var row in pascalTriangle)
             {
                 Console.WriteLine(string.Join(" ", row));
             }
-
         }
 
         public static void GroupNumbersByDivideToThree()

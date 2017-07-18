@@ -12,13 +12,13 @@ namespace HaiganDance
 
         public static void Main()
         {
-            var playerPos = new int[] {Size / 2, Size / 2};
+            var playerPos = new int[] { Size / 2, Size / 2 };
             var heihanPoints = HaiganHealth;
             var playerPoint = PlayerHealth;
             var isHeiganDead = false;
             var isPlayerDead = false;
             var hasCloud = false;
-            var deathCouse=String.Empty;
+            var deathCouse = String.Empty;
             var damageToHaigan = double.Parse(Console.ReadLine());
 
             while (true)
@@ -42,7 +42,6 @@ namespace HaiganDance
 
                 if (isHeiganDead || isPlayerDead)
                 {
-
                     break;
                 }
 
@@ -57,6 +56,7 @@ namespace HaiganDance
                                 hasCloud = true;
                                 deathCouse = "Plague Cloud";
                                 break;
+
                             case "Eruption":
                                 playerPoint -= EruptionDamage;
                                 deathCouse = spell;
@@ -69,15 +69,10 @@ namespace HaiganDance
                 if (isPlayerDead)
                 {
                     break;
-                    
                 }
-
-                
             }
 
             PrintResult(playerPos, heihanPoints, playerPoint, deathCouse);
-
-
         }
 
         private static void PrintResult(int[] playerPos, double heihanPoints, double playerPoint, string deathCouse)
@@ -114,7 +109,6 @@ namespace HaiganDance
             {
                 playerPos[1]++;
                 return true;
-
             }
             else if (playerPos[0] + 1 < Size && playerPos[0] + 1 > spellRow + 1)
             {
@@ -130,7 +124,6 @@ namespace HaiganDance
             return false;
         }
 
-
         private static bool IsPlayerInDamageZone(int[] playerPos, int spellRow, int spellCol)
         {
             return (playerPos[0] >= spellRow - 1 && playerPos[0] <= spellRow + 1) &&
@@ -138,4 +131,3 @@ namespace HaiganDance
         }
     }
 }
-

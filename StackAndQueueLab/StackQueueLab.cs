@@ -1,11 +1,8 @@
-﻿
-namespace StackAndQueueLab
+﻿namespace StackAndQueueLab
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class StackQueueLab
     {
@@ -47,7 +44,6 @@ namespace StackAndQueueLab
 
         public static void MathPotato()
         {
-            
         }
 
         public static void HotPotato()
@@ -63,7 +59,6 @@ namespace StackAndQueueLab
                 }
 
                 Console.WriteLine($"Removed {hotPotatoGame.Dequeue()}");
-
             }
 
             Console.WriteLine($"Last is {hotPotatoGame.Dequeue()}");
@@ -127,7 +122,6 @@ namespace StackAndQueueLab
                     case "+": result.Push((firstNum + secondNum).ToString()); break;
                     case "-": result.Push((firstNum - secondNum).ToString()); break;
                 }
-
             }
 
             Console.WriteLine(result.Pop());

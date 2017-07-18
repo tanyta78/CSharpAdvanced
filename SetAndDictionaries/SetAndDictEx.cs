@@ -8,8 +8,6 @@
     {
         public static void Main()
         {
-
-
         }
 
         public static void LegendaryFarmingNotMine()
@@ -47,9 +45,11 @@
                                 case "fragments":
                                     Console.WriteLine("Valanyr obtained!");
                                     break;
+
                                 case "shards":
                                     Console.WriteLine("Shadowmourne obtained!");
                                     break;
+
                                 case "motes":
                                     Console.WriteLine("Dragonwrath obtained!");
                                     break;
@@ -83,7 +83,6 @@
             var usersInfo = new SortedDictionary<string, SortedDictionary<string, int>>();
             for (int i = 0; i < lines; i++)
             {
-
                 string[] input = Console.ReadLine().Split().ToArray();
                 string ip = input[0];
                 string user = input[1];
@@ -106,9 +105,8 @@
                 }
 
                 usersInfo[user] = ipsDurations;
-
             }
-            //"{user}: {duration} [{IP1}, {IP2}, …]". 
+            //"{user}: {duration} [{IP1}, {IP2}, …]".
 
             foreach (var userInfo in usersInfo)
             {
@@ -121,11 +119,9 @@
                     {
                         Console.Write(", ");
                     }
-
                 }
                 Console.WriteLine(']');
             }
-
         }
 
         public static void PopulationCounter()
@@ -220,7 +216,6 @@
                     {
                         Console.Write(", ");
                     }
-
                 }
             }
         }
@@ -232,7 +227,6 @@
             string input = Console.ReadLine();
             string name = string.Empty;
             List<string> cards = new List<string>();
-
 
             while (!input.Equals("JOKER"))
             {
@@ -252,7 +246,6 @@
                 playersInfo[name] = uniqueCards;
                 input = Console.ReadLine();
             }
-
 
             foreach (var player in playersInfo)
             {
@@ -277,7 +270,6 @@
             cardTypes['H'] = 3;
             cardTypes['D'] = 2;
             cardTypes['C'] = 1;
-
 
             foreach (var card in player.Value)
             {
@@ -319,7 +311,6 @@
             {
                 Console.WriteLine($"{info.Key} -> {info.Value}");
             }
-
         }
 
         public static void MinerTask()
@@ -408,7 +399,6 @@
             {
                 Console.WriteLine($"{charOccure.Key}: {charOccure.Value} time/s");
             }
-
         }
 
         public static void PeriodicTableHAshSet()
@@ -506,6 +496,5 @@
                 Console.WriteLine(usersname);
             }
         }
-
     }
 }

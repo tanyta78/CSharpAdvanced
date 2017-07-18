@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WatchPerformance
 {
-    class Performance
+    internal class Performance
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //list performance
             var watch = Stopwatch.StartNew();

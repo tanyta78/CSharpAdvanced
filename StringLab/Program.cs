@@ -1,12 +1,11 @@
-﻿
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace StringLab
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using System.Collections.Generic;
 
     public class Program
     {
@@ -36,7 +35,6 @@ namespace StringLab
             {
                 string currentText = Console.ReadLine();
                 resultText.Add(currentText);
-
             }
             Console.WriteLine(string.Join(" ", resultText));
             watch.Stop();
@@ -114,17 +112,14 @@ namespace StringLab
                 if (!string.IsNullOrEmpty(before))
                 {
                     result.Append(before);
-
                 }
                 result.Append(partToUpper);
                 input = input.Substring(endIndex + 9);
-
             }
             if (!string.IsNullOrEmpty(result.ToString()))
             {
                 Console.WriteLine(result.ToString());
             }
-
         }
 
         public static void StudentGrades()
@@ -169,7 +164,6 @@ namespace StringLab
                 int indexOfResourcesDelimiter = protocol.Length + server.Length + 4;
                 string resources = input.Substring(indexOfResourcesDelimiter);
                 Console.WriteLine("Resources = {0}", resources);
-
             }
         }
 
@@ -200,7 +194,6 @@ namespace StringLab
                 Console.WriteLine($"Server = {server}");
                 Console.WriteLine($"Resources = {resources}");
             }
-
         }
     }
 }

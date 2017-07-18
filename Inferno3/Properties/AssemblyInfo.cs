@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ParkingSystem")]
+[assembly: AssemblyTitle("Inferno3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ParkingSystem")]
+[assembly: AssemblyProduct("Inferno3")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2ade3a40-2d90-4b49-b61d-0ce7ca1d736c")]
+[assembly: Guid("4b3e58c7-da1a-4183-ba81-1d48e792e0b4")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -11,7 +11,7 @@ namespace StudentsJoinedSpecialties
             public string StudentsName { get; set; }
             public string FacultyNumber { get; set; }
 
-            public Student( string facultyNumber, string studentsName)
+            public Student(string facultyNumber, string studentsName)
             {
                 this.StudentsName = studentsName;
                 this.FacultyNumber = facultyNumber;
@@ -38,9 +38,9 @@ namespace StudentsJoinedSpecialties
             while (!input.Equals("Students:"))
             {
                 var tokens = input.Split();
-                var speciality = tokens[0] +" "+ tokens[1];
+                var speciality = tokens[0] + " " + tokens[1];
                 var facultyNumber = tokens[2];
-                var currentStudent = new StudentSpecialty(speciality,facultyNumber);
+                var currentStudent = new StudentSpecialty(speciality, facultyNumber);
                 specialityList.Add(currentStudent);
                 input = Console.ReadLine();
             }
@@ -51,7 +51,7 @@ namespace StudentsJoinedSpecialties
                 var tokens = input.Split();
                 var studentName = tokens[1] + " " + tokens[2];
                 var facultyNumber = tokens[0];
-                var currentStudent = new Student(facultyNumber,studentName);
+                var currentStudent = new Student(facultyNumber, studentName);
                 students.Add(currentStudent);
                 input = Console.ReadLine();
             }

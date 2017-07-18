@@ -1,15 +1,12 @@
 ﻿namespace StackAndQueueEx
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
 
     public class StackEx
     {
-
         public static void Main()
         {
             //    ReverseNumberswithaStack();
@@ -19,7 +16,7 @@
             //SequenceWithQueue();
             //TruckTour();
             //BalancedParentheses
-            //RecursiveFibonacci DONT 
+            //RecursiveFibonacci DONT
             //SimpleTextEditor
             int numberOfPlants = int.Parse(Console.ReadLine());
             var plantsInfo = Console.ReadLine().Split().Select(int.Parse).ToArray();
@@ -44,69 +41,66 @@
             }
 
             Console.WriteLine(maxDaysAlive);
-
         }
 
         public static void PoisonousPlantsWithoutStack()
         {
-           
-                        int n = int.Parse(Console.ReadLine());
-                        int[] plants = Console.ReadLine().Split().Select(int.Parse).ToArray();
-                        int[] days = new int[n];
-                        int[] minElement = new int[n];
+            int n = int.Parse(Console.ReadLine());
+            int[] plants = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int[] days = new int[n];
+            int[] minElement = new int[n];
 
-                        int min = int.MaxValue;
-                        for (int i = 0; i < n; i++)
-                        {
-                            if (plants[i] < min)
-                            {
-                                min = plants[i];
-                            }
-                            minElement[i] = min;
-                        }
+            int min = int.MaxValue;
+            for (int i = 0; i < n; i++)
+            {
+                if (plants[i] < min)
+                {
+                    min = plants[i];
+                }
+                minElement[i] = min;
+            }
 
-                        int max = 0;
-                        int maxIndex = 0;
+            int max = 0;
+            int maxIndex = 0;
 
-                        for (int i = 1; i < n; i++)
-                        {
-                            if (plants[i] > plants[i - 1])
-                            {
-                                days[i] = 1;
-                                if (days[i] >= max)
-                                {
-                                    maxIndex = i;
-                                    max = days[i];
-                                }
-                                continue;
-                            }
-
-                            if (plants[i] > minElement[i])
-                            {
-                                if (plants[i] > plants[maxIndex])
-                                {
-                                    days[i] = days[i - 1] + 1;
-                                }
-                                else
-                                {
-                                    days[i] = days[maxIndex] + 1;
-                                }
-                            }
-                            if (plants[i] == minElement[i])
-                            {
-                                max = 0;
-                            }
-
-                            if (days[i] >= max)
-                            {
-                                maxIndex = i;
-                                max = days[i];
-                            }
-                        }
-
-                        Console.WriteLine(days.Max());
+            for (int i = 1; i < n; i++)
+            {
+                if (plants[i] > plants[i - 1])
+                {
+                    days[i] = 1;
+                    if (days[i] >= max)
+                    {
+                        maxIndex = i;
+                        max = days[i];
                     }
-                
+                    continue;
+                }
+
+                if (plants[i] > minElement[i])
+                {
+                    if (plants[i] > plants[maxIndex])
+                    {
+                        days[i] = days[i - 1] + 1;
+                    }
+                    else
+                    {
+                        days[i] = days[maxIndex] + 1;
+                    }
+                }
+                if (plants[i] == minElement[i])
+                {
+                    max = 0;
+                }
+
+                if (days[i] >= max)
+                {
+                    maxIndex = i;
+                    max = days[i];
+                }
+            }
+
+            Console.WriteLine(days.Max());
+        }
 
         public static void SimpleTextEditor()
         {
@@ -114,7 +108,6 @@
             Stack<string> result = new Stack<string>();
             for (int i = 0; i < numberOfOperations; i++)
             {
-
                 string[] commandLine = Console.ReadLine().Split();
                 string command = commandLine[0];
 
@@ -127,6 +120,7 @@
                         editedText.Append(commandLine[1]);
                         result.Push(editedText.ToString());
                         break;
+
                     case "2":
                         var currentText = result.Peek();
                         var newText = new StringBuilder(currentText);
@@ -134,19 +128,21 @@
                         newText.Remove(startIndex, currentText.Length - startIndex);
                         result.Push(newText.ToString());
                         break;
+
                     case "3":
                         var curentText = result.Peek();
 
                         int currentIndex = int.Parse(commandLine[1]) - 1;
                         Console.WriteLine(curentText[currentIndex]);
                         break;
+
                     case "4":
                         result.Pop();
                         break;
+
                     default:
                         throw new InvalidOperationException();
                 }
-
             }
         }
 
@@ -194,7 +190,7 @@
         {
             int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(recursiveFibonacciWithMemoization(n-1));
+            Console.WriteLine(recursiveFibonacciWithMemoization(n - 1));
         }
 
         public static void BalancedParentheses()
@@ -218,7 +214,6 @@
                     case '}':
                         if (!stack.Any())
                             flag = false;
-
                         else if (stack.Pop() != '{')
                             flag = false;
                         break;
@@ -226,7 +221,6 @@
                     case ')':
                         if (!stack.Any())
                             flag = false;
-
                         else if (stack.Pop() != '(')
                             flag = false;
                         break;
@@ -234,7 +228,6 @@
                     case ']':
                         if (!stack.Any())
                             flag = false;
-
                         else if (stack.Pop() != '[')
                             flag = false;
                         break;
@@ -307,7 +300,6 @@
                 mySeqToPrint.Add(2 * currentNumber + 1);
                 mySequanceQueue.Enqueue(currentNumber + 2);
                 mySeqToPrint.Add(currentNumber + 2);
-
             }
             for (int i = 0; i < 50; i++)
             {
@@ -343,7 +335,7 @@
             }
             else
             {
-                //what to do if elementstopush is greater than numbers.count 
+                //what to do if elementstopush is greater than numbers.count
 
                 for (int i = 0; i < elementsToEnqueue; i++)
                 {
@@ -389,6 +381,7 @@
                             maxNumbers.Push(maxNum);
                         }
                         break;
+
                     case "2":
                         ulong numToPop = numbers.Pop();
                         if (numToPop == maxNumbers.Peek())
@@ -405,6 +398,7 @@
                         }
 
                         break;
+
                     case "3":
                         Console.WriteLine(maxNumbers.Peek());
                         break;
@@ -439,7 +433,7 @@
             }
             else
             {
-                //what to do if elementstopush is greater than numbers.count 
+                //what to do if elementstopush is greater than numbers.count
 
                 for (int i = 0; i < elementsToPush; i++)
                 {
@@ -475,7 +469,6 @@
                 {
                     int currentNumber = int.Parse(numbers[i]);
                     numbersStack.Push(currentNumber);
-
                 }
                 for (int i = 0; i < numbers.Length; i++)
                 {
@@ -486,7 +479,6 @@
             {
                 Console.WriteLine(input);
             }
-
         }
     }
 
@@ -500,14 +492,10 @@
             this.Poison = poison;
             this.DaysAlive = daysalive;
         }
-
-
-
     }
 
     public class GasPump
     {
-
         public int DistanceToNext;
         public int AmountOfGas;
         public int IndexOfPump;

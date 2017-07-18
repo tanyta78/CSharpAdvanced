@@ -7,7 +7,6 @@
     {
         public static void Main()
         {
-
             string[] dimensions = Console.ReadLine().Split().ToArray();
             int totalRows = int.Parse(dimensions[0]);
             int totalCols = int.Parse(dimensions[1]);
@@ -87,7 +86,7 @@
             }
         }
 
-        static bool IsCellWithinRadius(int currRow, int currCol, int centerRow, int centerCol, int radius)
+        private static bool IsCellWithinRadius(int currRow, int currCol, int centerRow, int centerCol, int radius)
         {
             bool isInRange = false;
             isInRange = ((currRow - centerRow) * (currRow - centerRow)) + ((currCol - centerCol) * (currCol - centerCol)) <= radius * radius;
@@ -95,7 +94,7 @@
             return isInRange;
         }
 
-        static void DropChar(char[,] matrix, int col)
+        private static void DropChar(char[,] matrix, int col)
         {
             while (true)
             {

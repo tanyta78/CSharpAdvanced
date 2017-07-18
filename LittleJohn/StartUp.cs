@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace LittleJohn
 {
-   public class StartUp
+    public class StartUp
     {
-       public static void Main()
+        public static void Main()
         {
             // declarations
             const int N = 4;
@@ -48,7 +46,7 @@ namespace LittleJohn
                 }
             }
 
-            // numbers of arrows -> string   
+            // numbers of arrows -> string
             string numberAsString = String.Format("{0}{1}{2}", smallArrowsCount, mediumArrowsCount, largeArrowsCount);
 
             // -> int
@@ -67,4 +65,3 @@ namespace LittleJohn
         }
     }
 }
-    

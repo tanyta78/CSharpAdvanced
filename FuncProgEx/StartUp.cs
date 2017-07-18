@@ -8,8 +8,6 @@ namespace FuncProgEx
     {
         public static void Main()
         {
-            
-           
         }
 
         public static void TriFunction()
@@ -20,7 +18,6 @@ namespace FuncProgEx
 
             foreach (var word in words)
             {
-
                 Predicate<string> sumsToCheck = w => wordToSum(w) >= wantedSum;
                 if (sumsToCheck(word))
                 {

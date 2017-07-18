@@ -1,16 +1,14 @@
 ﻿namespace MatrixExer
 {
     using System;
-    using System.Linq;
-    using System.Text;
     using System.Collections.Generic;
-
+    using System.Linq;
 
     public class MatrixEx
     {
         public static void Main()
         {
-            int[] input = Console.ReadLine().Split(new[] {' ', '\t'}, StringSplitOptions.RemoveEmptyEntries)
+            int[] input = Console.ReadLine().Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse).ToArray();
             int dimensionOne = input[0];
             int dimensionTwo = input[1];
@@ -24,19 +22,17 @@
             int impactColumn = input[1];
             int radius = input[2];
 
-            for (int rowIndex = dimensionOne-1; rowIndex >0; rowIndex--)
+            for (int rowIndex = dimensionOne - 1; rowIndex > 0; rowIndex--)
             {
                 if (rowIndex
                 for (int colIndex = 0; colIndex < dimensionTwo; colIndex++)
-                {
-                    
-                }
+                    {
+                    }
             }
         }
 
         public static void TargetPractise()
         {
-            
         }
 
         public static void MaxSumSquare()
@@ -108,7 +104,6 @@
             Console.WriteLine($"{indexCells[0]} {indexCells[1]} {indexCells[2]}");
             Console.WriteLine($"{indexCells[3]} {indexCells[4]} {indexCells[5]}");
             Console.WriteLine($"{indexCells[6]} {indexCells[7]} {indexCells[8]}");
-
         }
 
         public static void EqualCharsSquares()
@@ -142,7 +137,6 @@
                         squareMatrixofEqualEl++;
                     }
                 }
-
             }
 
             Console.WriteLine(squareMatrixofEqualEl);
@@ -157,7 +151,6 @@
             {
                 currentRow = Console.ReadLine().Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries).Select(double.Parse).ToArray();
                 numberMatrix[rowIndex] = currentRow;
-
             }
 
             double primaryDiagonalSum = 0;
@@ -170,7 +163,6 @@
                 count++;
             }
             Console.WriteLine(Math.Abs(primaryDiagonalSum - secondaryDiagonalSum));
-
         }
 
         public static void PalimdromesMatrixWithOrWithoutStrBuil()
@@ -180,7 +172,6 @@
             int rowsNumber = input[0];
             int colsNumber = input[1];
             var alphabetMatrix = new String[rowsNumber, colsNumber];
-
 
             for (int rowIndex = 0; rowIndex < rowsNumber; rowIndex++)
             {
@@ -205,7 +196,6 @@
                 for (int colIndex = 0; colIndex < colsNumber; colIndex++)
                 {
                     Console.Write($"{alphabetMatrix[rowIndex, colIndex]} ");
-
                 }
                 Console.WriteLine();
             }

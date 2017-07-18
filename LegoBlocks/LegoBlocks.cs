@@ -33,10 +33,9 @@
                 isFit.Enqueue(rowLength);
             }
 
-
             if (isFit.Where(x => x == isFit.Peek()).ToArray().Length == isFit.Count)
             {
-                PrintMatchedArray(firstJaggedArr, secondJaggedArr,numberRows);
+                PrintMatchedArray(firstJaggedArr, secondJaggedArr, numberRows);
             }
             else
             {
@@ -44,11 +43,11 @@
             }
         }
 
-        private static void PrintMatchedArray(int[][] firstJaggedArr, int[][] secondJaggedArr,int numberRows)
+        private static void PrintMatchedArray(int[][] firstJaggedArr, int[][] secondJaggedArr, int numberRows)
         {
             for (int rowIndex = 0; rowIndex < numberRows; rowIndex++)
             {
-                Console.Write($"[{string.Join(", ",firstJaggedArr[rowIndex])}, {string.Join(", ", secondJaggedArr[rowIndex].Reverse())}]");
+                Console.Write($"[{string.Join(", ", firstJaggedArr[rowIndex])}, {string.Join(", ", secondJaggedArr[rowIndex].Reverse())}]");
                 Console.WriteLine();
             }
         }

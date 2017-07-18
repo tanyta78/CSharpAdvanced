@@ -32,7 +32,7 @@ namespace LinqLab
 
             foreach (var town in result)
             {
-                Console.WriteLine(string.Format($"{town.Key}: {string.Join(" ", town.Value.OrderByDescending(p=>p).Take(5))}"));
+                Console.WriteLine(string.Format($"{town.Key}: {string.Join(" ", town.Value.OrderByDescending(p => p).Take(5))}"));
             }
         }
 
