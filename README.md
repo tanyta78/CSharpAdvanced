@@ -24,7 +24,7 @@ Tatyana Milanova
 <table border="0" width="100%" cellspacing="1" cellpadding="3" align="center">
     <tbody>
     <tr><th align="center" width="50%">C# Advanced - May 2017: <br /> 23.05.2017 - 25.06.2017</th><th width="40%">Grade:5.30 <br /> Issue Date:</th><th align="center width=">
-    <p><a title="C# Advanced" href="" target="_blank">Certificate</a></p>
+    <p><a title="C# Advanced" href="https://softuni.bg/certificates/details/21499/c1b5cb00" target="_blank">Certificate</a></p>
     </th></tr>
     <!-- Course Body -->
     <tr>
