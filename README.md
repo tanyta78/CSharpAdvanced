@@ -142,6 +142,11 @@ Tatyana Milanova
     <p><a title="Exams" href="https://github.com/tanyta78/CSharpExamsAdvanced/tree/master/CSharpAdvanceExams" target="_blank">Exams</a></p>
     </td>
     </tr>
+    <tr><td colspan="3" align="center" width="100%"><p>Team Project</p></td></tr>
+    <tr>
+    <td width="50%">
+    <p><a title="HangMan" href="https://github.com/tanyta78/Hangman-CSharp-AdvancedGame" target="_blank">Hangman</a></p>
+    </td>
     </tbody>
     </table>
     <hr />
