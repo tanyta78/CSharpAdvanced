@@ -133,6 +133,15 @@ Tatyana Milanova
     <p><a title="RadioactiveBunnies" href="https://github.com/tanyta78/CSharpAdvanced/tree/master/RadioactiveBunnies" target="_blank">RadioactiveBunnies</a></p>
     </td>
      </tr>
+         <tr><td colspan="3" align="center" width="100%"><p>Project</p></td></tr>
+    <tr>
+    <td width="50%">
+    <p><a title="BashSoft" href="https://github.com/tanyta78/SoftUniAdvancedProject" target="_blank">Bashsoft</a></p>
+    </td>
+    <td colspan="2" width="50%">
+    <p><a title="Exams" href="https://github.com/tanyta78/CSharpExamsAdvanced/tree/master/CSharpAdvanceExams" target="_blank">Exams</a></p>
+    </td>
+    </tr>
     </tbody>
     </table>
     <hr />
